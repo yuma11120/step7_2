@@ -1,0 +1,55 @@
+
+/* login 画面のcss cht gpt*/
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #000;
+  }
+  
+  .form-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  .button-submit {
+    background-color: #ffa500; /* オレンジ色 */
+    color: white;
+  }
+  
+  .button-back {
+    background-color: #00bfff; /* 青色 */
+    color: white;
+  }
+  
+  /* ホバー時のボタンのスタイル */
+  .button:hover {
+    opacity: 0.8;
+  }
+  
