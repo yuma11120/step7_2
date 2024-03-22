@@ -14,6 +14,8 @@ class step72 extends Model
 
     protected $table = 'step72';
     protected $primaryKey = 'id';
+    protected $fillable = ['name', 'price', 'stock', 'makerName', 'coment', 'image'];
+
 
     public function getData(){
         $data = step72::table($this->table)->get();

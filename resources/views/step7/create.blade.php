@@ -19,32 +19,31 @@
 
             <h1>登録画面</h1>
             
-            <!-- 一旦送信先は、/step7/Confirmに指定-->
             <form action="{{ route('step7.new') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="table">
                     <p>商品名<span>*</span></p>
-                    <input type="text" name="name">
+                        <input type="text" name="name">
                     <p>
                 </div>
                 <div class="table">
                     <p>メーカー名<span>*</span></p>
-                    <input type="text" name="makerName">
+                        <input type="text" name="makerName">
                     <p>
                 </div>
                 <div class="table">
                     <p>在庫数<span>*</span></p>
-                    <input type="text" name="stock">
+                        <input type="text" name="stock">
                     <p>
                 </div>
                 <div class="table">
                     <p>価格<span>*</span></p>
-                    <input type="text" name="price">
+                        <input type="text" name="price">
                     <p>
                 </div>
                 <div class="table">
                     <p>コメント</p>
-                    <textarea name="coment"></textarea>
+                        <textarea name="coment"></textarea>
                     <p>
                 </div>
 

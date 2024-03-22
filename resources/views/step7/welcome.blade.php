@@ -50,7 +50,7 @@
                     @foreach ($step72s as $step72)
                         <tr>
                         <td>{{ $step72->id }}</td>
-                        <td><img src="{{ asset('storage/' . $step72->picture) }}" alt="商品画像" style="width:100px;"></td>                        <td>{{ $step72->name }}</td>
+                        <td><img src="{{ asset('images/' . $step72->image) }}" alt="商品画像" style="width:30px;"></td>                        <td>{{ $step72->name }}</td>
                         <td>{{ $step72->price }}</td>
                         <td>{{ $step72->stock }}</td>
                         <td>{{ $step72->makerName }}</td>

@@ -32,43 +32,6 @@
                     @endauth
                 </div>
             @endif
-            <h1>編集確認画面</h1>
-            <h2>編集しました。</h2>
-            @php
-            
-                $name = $_POST['name'];
-                $price = $_POST['price'];
-                $stock = $_POST['stock'];
-                $makerName = $_POST['makerName'];
-
-                $dsn = 'mysql:host=localhost;dbname=step7;charset=utf8';
-                $user = 'root';
-                $pass = 'root';
-
-    //接続はしている
-        try{
-                $dbh = new PDO($dsn, $user, $pass,[
-                    PDO::ATTR_ERRMODE  => PDO::ERRMODE_EXCEPTION,
-                ]);
-
-                    $sql ="UPDATE step72 SET  name =:name, makerName = :makerName, stock =  :stock, price = :price WHERE id = :id";
-                $stmt = $dbh->prepare($sql);
-
-                    $stmt->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
-                    $stmt->bindValue(':makerName', $_POST['makerName'], PDO::PARAM_STR);
-                    $stmt->bindValue(':stock', $_POST['stock'], PDO::PARAM_STR);
-                    $stmt->bindValue(':price', $_POST['price'], PDO::PARAM_STR);
-                    $stmt->bindValue( ':id',$step72s->id, PDO::PARAM_INT);
-                    
-                    $stmt->execute();
-                    header('Location: step7.welcome');
-                    exit();
-            } catch(PDOException $e){
-                echo '接続失敗' . $e->getMessage();
-                exit();
-            }
-
-            @endphp
         </div>
     </body>
 </html>

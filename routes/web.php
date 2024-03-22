@@ -32,12 +32,9 @@ Route::get('/delete/{id}', [App\Http\Controllers\step7Controller::class, 'delete
 Route::get('/edit/{id}', [App\Http\Controllers\step7Controller::class, 'edit'])->name('step7.edit');
 Route::post('/update/{id}', [App\Http\Controllers\step7Controller::class, 'update'])->name('step7.update');
 Route::post('/destroy{id}', [App\Http\Controllers\step7Controller::class, 'destroy'])->name('step7.destroy');
-Route::get('/signUp', [App\Http\Controllers\step7Controller::class, 'signUp'])->name('step7.signUp');
 Route::post('/login', [App\Http\Controllers\step7Controller::class, 'login'])->name('step7.login');
-Route::get('/loginForm', [App\Http\Controllers\step7Controller::class, 'loginForm'])->name('step7.loginForm');
 Route::get('/step7.welcome', [App\Http\Controllers\step7Controller::class, 'welcome'])->name('step7.welcome')->middleware('auth');
 Route::get('update/step7.welcome', [App\Http\Controllers\step7Controller::class, 'welcome'])->name('step7.welcome')->middleware('auth');
-Route::get('/step7.upload', [App\Http\Controllers\ImageController::class, 'upload'])->name('step7.upload')->middleware('auth');
 
 Route::post('/step7.new', [App\Http\Controllers\step7Controller::class, 'store'])->name('step7.new')->middleware('auth');
 
@@ -46,4 +43,4 @@ Route::post('/step7.new', [App\Http\Controllers\step7Controller::class, 'store']
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\step7Controller::class, 'welcome'])->name('step7.welcome')->middleware('auth');

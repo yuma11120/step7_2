@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('step7', function (Blueprint $table) {
-            $table->id('ID');
-            $table->bigInteger('picture');
-            $table->bigInteger('name');
+        Schema::create('products', function (Blueprint $table) {
+            $table->id('id');
+            $table->bigInteger('company_id');
+            $table->bigInteger('product_name');
             $table->string('price');
             $table->string('stock');
-            $table->string('makerName');
+            $table->string('comment');
+            $table->string('img_path');
+            $table->timestamps(); 
         });
     }
 
