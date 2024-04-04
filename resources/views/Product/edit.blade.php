@@ -15,42 +15,43 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
-                        <form action="{{ route('step7.update', ['id'=>$step72->id]) }}" method = "post" class = 'form-container' enctype="multipart/form-data">
+                        <form action="{{ route('Product.update', ['id'=>$Product->id]) }}" method = "post" class = 'form-container' enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <h1>商品情報編集画面</h1> 
                             <div class = 'editContent' >
                                 <p>ID</p>
-                                <p>{{ $step72->id }}</p>
-                                <input type="hidden" name="id" value="{{ $step72->id }}">
+                                <p>{{ $Product->id }}</p>
+                                <input type="hidden" name="company_id" value="{{ $Product->id }}">
                             </div>
                             <div class = 'editContent'>
-                                <p>商品画像</p><input type="file" name="image">
+                                <p>商品画像</p><input type="file" name="image_path">
                             </div>
                             <div class = 'editContent'>
                                 <p>商品名</p>
-                                <input type="text" value = '{{ $step72->name }}' name = 'name'>                      
+                                <input type="text" value = '{{ $Product->product_name }}' name = 'product_name'>                      
                             </div>
                             <div class = 'editContent'>
                                 <p>価格</p>
-                                <input type="text" value = '{{ $step72->price }}' name = 'price'>
+                                <input type="text" value = '{{ $Product->price }}' name = 'price'>
                             </div>
                             <div class = 'editContent'>
                                 <p>在庫数</p>
-                                <input type="text" value = '{{ $step72->stock }}' name = 'stock'>
+                                <input type="text" value = '{{ $Product->stock }}' name = 'stock'>
                             </div>
                             <div class = 'editContent'>
                                 <p>メーカー名</p>
-                                <input type="text" value = '{{ $step72->makerName }}' name = 'makerName'>
+                                <input type="text" value = '{{ $Product->makerName }}' name = 'company_name'>
                             </div>
                             <div class = 'editContent'>
                                 <p>コメント</p>
-                                <textarea name="coment" value = "{{ $step72->coment }}"></textarea>                            
+                                <textarea  value = "{{ $Product->comment }}" name="comment" ></textarea>                            
                             </div>
                             <div class = 'editContent'>
                                 <input type="submit" value = "編集">
                             </div>
                             <div>
-                                <a href="/step7_2/public/step7.welcome">一覧画面に戻る</a>
+                                <a href="/step7_test/public/Product.welcome">一覧画面に戻る</a>
                             </div>
                         </form>
             

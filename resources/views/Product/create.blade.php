@@ -19,16 +19,16 @@
 
             <h1>登録画面</h1>
             
-            <form action="{{ route('step7.new') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('Product.new') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="table">
                     <p>商品名<span>*</span></p>
-                        <input type="text" name="name">
+                        <input type="text" name="product_name">
                     <p>
                 </div>
                 <div class="table">
                     <p>メーカー名<span>*</span></p>
-                        <input type="text" name="makerName">
+                        <input type="text" name="company_name">
                     <p>
                 </div>
                 <div class="table">
@@ -43,12 +43,12 @@
                 </div>
                 <div class="table">
                     <p>コメント</p>
-                        <textarea name="coment"></textarea>
+                        <textarea name="comment"></textarea>
                     <p>
                 </div>
 
                 <div>
-                    <input type="file" name="image">
+                    <input type="file" name="image_path">
                 </div>
 
                 <div>
@@ -58,7 +58,7 @@
 
     
                 <div>
-                    <a href="/step7_2/public/step7.welcome">戻る</a>
+                    <a href="/step7_test/public/Product.welcome">戻る</a>
                 </div>
 
 

@@ -6,24 +6,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class step72 extends Model
+class Sale extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-
-    protected $table = 'step72';
+    protected $table = 'Sales';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'price', 'stock', 'makerName', 'coment', 'image'];
+    protected $fillable = ['product_id'];
 
 
     public function getData(){
-        $data = step72::table($this->table)->get();
+        $data = Sale::table($this->table)->get();
         return $data;
     }
 
     public function deleteStep72ById($id)
     {
         return $this->destroy($id);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 }

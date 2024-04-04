@@ -18,29 +18,28 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\step7Controller::class, 'welcome']);
+Route::get('/', [App\Http\Controllers\ProductController::class, 'welcome']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/show/{id}', [App\Http\Controllers\step7Controller::class, 'show'])->name('step7.show');
+Route::get('/show/{id}', [App\Http\Controllers\ProductController::class, 'show'])->name('Product.show');
 
-Route::get('/newCreate', [App\Http\Controllers\step7Controller::class, 'newCreate'])->name('step7.newCreate');
+Route::get('/newCreate', [App\Http\Controllers\ProductController::class, 'newCreate'])->name('Product.newCreate');
 
 //入力フォームでルーティングする際は、ルーティングはPOSTで、フォームには@csrf と入力する必要あり
-Route::post('/Confirm', [App\Http\Controllers\step7Controller::class, 'Confirm'])->name('step7.Confirm');
-Route::get('/delete/{id}', [App\Http\Controllers\step7Controller::class, 'delete'])->name('step7.delete');
-Route::get('/edit/{id}', [App\Http\Controllers\step7Controller::class, 'edit'])->name('step7.edit');
-Route::post('/update/{id}', [App\Http\Controllers\step7Controller::class, 'update'])->name('step7.update');
-Route::post('/destroy{id}', [App\Http\Controllers\step7Controller::class, 'destroy'])->name('step7.destroy');
-Route::post('/login', [App\Http\Controllers\step7Controller::class, 'login'])->name('step7.login');
-Route::get('/step7.welcome', [App\Http\Controllers\step7Controller::class, 'welcome'])->name('step7.welcome')->middleware('auth');
-Route::get('update/step7.welcome', [App\Http\Controllers\step7Controller::class, 'welcome'])->name('step7.welcome')->middleware('auth');
+Route::post('/Confirm', [App\Http\Controllers\ProductController::class, 'Confirm'])->name('Product.Confirm');
+Route::get('/delete/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('Product.delete');
+Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('Product.edit');
+Route::post('/destroy{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('Product.destroy');
+Route::post('/login', [App\Http\Controllers\HomeController::class, 'login'])->name('Product.login');
+Route::get('/Product.welcome', [App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.welcome')->middleware('auth');
+Route::get('update/Product.welcome', [App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.welcome')->middleware('auth');
+Route::put('/Product/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('Product.update');
+Route::post('/Product.new', [App\Http\Controllers\ProductController::class, 'store'])->name('Product.new')->middleware('auth');
 
-Route::post('/step7.new', [App\Http\Controllers\step7Controller::class, 'store'])->name('step7.new')->middleware('auth');
 
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\step7Controller::class, 'welcome'])->name('step7.welcome')->middleware('auth');
+Route::get('/home',[App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.welcome')->middleware('auth');

@@ -23,6 +23,14 @@ return new class extends Migration
             $table->string('img_path');
             $table->timestamps(); 
         });
+
+        Schema::create('companies', function (Blueprint $table) {
+            $table->id('id');
+            $table->bigInteger('company_name');
+            $table->bigInteger('street_address');
+            $table->string('representative_name');
+            $table->timestamps(); 
+        });
     }
 
     /**
