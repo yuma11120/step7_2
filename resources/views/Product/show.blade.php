@@ -24,13 +24,13 @@
                         </tr>
                         <tr>
                             <th>商品画像</th>
-                            <td>
+                            <th>
                                 @if ($Product->image_path)
                                     <img src="{{ asset('images/' . $Product->image_path) }}" alt="商品画像" style="width: 30px; "> <!-- 画像の幅を150pxに設定 -->
                                 @else
                                     画像がありません。
                                 @endif
-                            </td>
+                            </th>
                         </tr>
                             <th>商品名</th>
                             <th>{{ $Product->product_name }}</th>
@@ -45,7 +45,7 @@
                         </tr>
                         <tr>
                             <th>メーカー名</th>
-                            <th>{{ $Product->company_name }}</th>
+                            <th>{{ $Product->company->company_name }}</th>
                         </tr>
                         <tr>
                             <th>コメント</th>
@@ -55,7 +55,7 @@
                     <a href="{{ route('Product.edit', ['id'=>$Product->id]) }}">編集</a>
         
         <div>
-            <a href="/step7_2/public/step7.welcome">一覧画面に戻る</a>
+            <a href="/step7_test/public/">一覧画面に戻る</a>
         </div>
             
         </div>

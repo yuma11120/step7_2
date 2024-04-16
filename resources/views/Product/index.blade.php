@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>商品一覧画面</title>
 
         <!-- Fonts -->
 
@@ -26,7 +26,7 @@
             @endif
             <h1 class = 'title'>商品一覧画面</h1>
             <div class="form">
-                <form action="{{ route('Product.welcome') }}" method="GET">
+                <form action="{{ route('Product.index') }}" method="GET">
                     <input type="search" name="keyword" placeholder="検索" class="input-text" />
                                         <!-- メーカーを選択するためのセレクトボックスを追加 -->
                     <select name="company_id" class="select">
@@ -37,7 +37,7 @@
                     </select>
 
                     <input type="submit" id="search" value="検索" class="input" />
-                    <button type="button" onclick="window.location='{{ route('Product.welcome') }}'" class="">検索解除</button>
+                    <button type="button" onclick="window.location='{{ route('Product.index') }}'" class="">検索解除</button>
                 </form>
 
 

@@ -26,11 +26,11 @@
                         <input type="text" name="product_name">
                     <p>
                 </div>
-                <div class="table">
-                    <p>メーカー名<span>*</span></p>
-                        <input type="text" name="company_name">
-                    <p>
-                </div>
+                <select name="company_id" class="select">
+                        @foreach($companies as $company)
+                            <option value="{{ $company->id }}"{{ request('company_id') == $company->id ? ' selected' : '' }}>{{ $company->company_name }}</option>
+                        @endforeach
+                </select>
                 <div class="table">
                     <p>在庫数<span>*</span></p>
                         <input type="text" name="stock">
@@ -58,7 +58,7 @@
 
     
                 <div>
-                    <a href="/step7_test/public/Product.welcome">戻る</a>
+                    <a href="/step7_test/public/">戻る</a>
                 </div>
 
 

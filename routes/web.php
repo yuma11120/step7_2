@@ -31,10 +31,10 @@ Route::get('/delete/{id}', [App\Http\Controllers\ProductController::class, 'dele
 Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('Product.edit');
 Route::post('/destroy{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('Product.destroy');
 Route::post('/login', [App\Http\Controllers\HomeController::class, 'login'])->name('Product.login');
-Route::get('/Product.welcome', [App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.welcome')->middleware('auth');
-Route::get('update/Product.welcome', [App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.welcome')->middleware('auth');
+Route::get('/Product.welcome', [App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.index')->middleware('auth');
+Route::get('update/Product.welcome', [App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.index')->middleware('auth');
 Route::put('/Product/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('Product.update');
-Route::post('/Product.new', [App\Http\Controllers\ProductController::class, 'store'])->name('Product.new')->middleware('auth');
+Route::post('/products/store', [App\Http\Controllers\ProductController::class, 'store'])->name('Product.new')->middleware('auth');
 
 
 
@@ -42,4 +42,4 @@ Route::post('/Product.new', [App\Http\Controllers\ProductController::class, 'sto
 
 Auth::routes();
 
-Route::get('/home',[App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.welcome')->middleware('auth');
+Route::get('/home',[App\Http\Controllers\ProductController::class, 'welcome'])->name('Product.index')->middleware('auth');

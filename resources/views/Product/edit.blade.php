@@ -19,9 +19,8 @@
                         @csrf
                         @method('PUT')
                         <h1>商品情報編集画面</h1> 
-                            <div class = 'editContent' >
-                                <p>ID</p>
-                                <p>{{ $Product->id }}</p>
+                            <div class = 'editContent' >                              
+                                <p>ID : {{ $Product->id }}</p>
                                 <input type="hidden" name="company_id" value="{{ $Product->id }}">
                             </div>
                             <div class = 'editContent'>
@@ -39,19 +38,23 @@
                                 <p>在庫数</p>
                                 <input type="text" value = '{{ $Product->stock }}' name = 'stock'>
                             </div>
-                            <div class = 'editContent'>
+                            <div class="editContent">
                                 <p>メーカー名</p>
-                                <input type="text" value = '{{ $Product->makerName }}' name = 'company_name'>
+                                <select name="company_id" class="select">
+                                    @foreach($companies as $company)
+                                        <option value="{{ $company->id }}"{{ $Product->company_id == $company->id ? ' selected' : '' }}>{{ $company->company_name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class = 'editContent'>
                                 <p>コメント</p>
-                                <textarea  value = "{{ $Product->comment }}" name="comment" ></textarea>                            
+                                <textarea  name="comment" >{{ $Product->comment }}</textarea>                            
                             </div>
                             <div class = 'editContent'>
                                 <input type="submit" value = "編集">
                             </div>
                             <div>
-                                <a href="/step7_test/public/Product.welcome">一覧画面に戻る</a>
+                                <a href="/step7_test/public/">一覧画面に戻る</a>
                             </div>
                         </form>
             
