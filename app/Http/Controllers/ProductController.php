@@ -145,9 +145,9 @@ class ProductController extends Controller
                 $validatedData['image_path'] = $imageName;
             }
 
-            $product = new Product($validatedData);
-            $product->company_id = $validatedData['company_id'];
-            $product->save();
+            $Product = new Product($validatedData);
+            $Product->company_id = $validatedData['company_id'];
+            $Product->save();
 
             return redirect()->route('Product.index')->with('success', 'Product created successfully.');
         } catch (\Exception $e) {
